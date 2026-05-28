@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transportation Tracking System</title>
+</head>
+<body>
+
+    <h1>Transportation & Delivery Tracking System</h1>
+
+    <form action="/add" method="POST">
+
+        <input type="text" name="customer" placeholder="Customer Name" required>
+
+        <input type="text" name="product" placeholder="Product Name" required>
+
+        <select name="status">
+            <option>Pending</option>
+            <option>In Transit</option>
+            <option>Delivered</option>
+        </select>
+
+        <button type="submit">Add Shipment</button>
+
+    </form>
+
+    <hr>
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Status</th>
+        </tr>
+
+        {% for shipment in shipments %}
+
+        <tr>
+            <td>{{ shipment[0] }}</td>
+            <td>{{ shipment[1] }}</td>
+            <td>{{ shipment[2] }}</td>
+            <td>{{ shipment[3] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Tracking System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Transportation & Delivery Tracking System</h1>
+
+    <div class="top-bar">
+        <a href="/add" class="btn">Add Shipment</a>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+
+    <div class="cards">
+        <div class="card">Total: {{ total }}</div>
+        <div class="card">Pending: {{ pending }}</div>
+        <div class="card">In Transit: {{ transit }}</div>
+        <div class="card">Delivered: {{ delivered }}</div>
+    </div>
+
+    <form method="GET" action="/dashboard" class="search-box">
+        <input type="text" name="search" placeholder="Search by customer, product, or status" value="{{ search }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for shipment in shipments %}
+        <tr>
+            <td>{{ shipment[0] }}</td>
+            <td>{{ shipment[1] }}</td>
+            <td>{{ shipment[2] }}</td>
+            <td>{{ shipment[3] }}</td>
+            <td>{{ shipment[4] }}</td>
+            <td>
+                <a href="/edit/{{ shipment[0] }}">Edit</a> |
+                <a href="/delete/{{ shipment[0] }}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

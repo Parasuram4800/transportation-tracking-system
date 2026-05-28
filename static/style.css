@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container,
+.form-container,
+.login-box {
+    width: 80%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login-body {
+    background: #e9ecef;
+}
+
+.login-box {
+    width: 350px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.card {
+    flex: 1;
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.top-bar {
+    margin-bottom: 20px;
+}
+
+.btn,
+.logout {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn {
+    background: green;
+}
+
+.logout {
+    background: red;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+.hint {
+    margin-top: 10px;
+    color: gray;
+}
